@@ -53,6 +53,8 @@ public class CinemaLoop11 {
         System.out.println("Total Tickets Sold     : " + totalTicketsSold + " Tickets");
         System.out.printf("Total Daily Income      : Rp.%.0f\n", totalIncome);
 
+        sc.close();
+
         }
     }
 
