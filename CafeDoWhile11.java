@@ -28,5 +28,7 @@ public class CafeDoWhile11 {
             sc.nextLine();
         } while (true);
         sc.close();
+
+        System.out.println("All transaction completed");
     }
 }
