@@ -2,48 +2,57 @@ import java.util.Scanner;;
 
 public class CinemaLoop11 {
     public static void main(String[] args) {
-        try (Scanner sc = new Scanner(System.in)) {
-            final int ticketPrice = 50000;
-            int totalTickets = 0;
-            double totalSales = 0;
-            double discount = 0;
-            double totalPrice;
-            double totalPay;
+        Scanner sc = new Scanner(System.in);
+            
+        double ticketPrice = 50000;
+        int totalTicketsSold = 0;
+        double totalIncome = 0;
+        int totalTickets;
+        double discount;
+        double totalBeforeDiscount;
+        double totalPay;
 
-            while (true) {
-                System.out.print("Enter the number of tickets purchased (type 0 to finish): ");
-                totalTickets = sc.nextInt();
+        System.out.println("=== Cinema Ticket Sales System ===");
 
-                if (totalTickets < 0) {
-                    System.out.println("The number of tickets is invalid (it cannot be negative). Please re-enter\n!");
-                    continue;
-                }
+        do {
+            System.out.print("Enter the number of tickets purchased (type 0 to exit): ");
+            totalTickets = sc.nextInt();
 
-                if (totalTickets == 0) {
-                    break;
-                }
-
-                totalPrice = totalTickets * ticketPrice;
-
-                if (totalTickets > 10) {
-                    discount = 0.15;
-                } else if (totalTickets > 4) {
-                    discount = 0.10;
-                }
-
-                totalPay = totalPrice - (totalPrice * discount);
-
-                totalTickets += totalTickets;
-                totalSales += totalPay;
-                
-                System.out.println("Discount: " + (int)(discount * 100) + "%");
-                System.out.println("Total payment for this transaction: Rp. " + (long)totalPay);
-                System.out.println("----------------------------------------------------");
-
-                System.out.println("Total tickets sold today : " + totalTickets + " tickets");
-                System.out.println("Total revenue for today  : Rp " + (long)totalSales);
-
+            // Negative Input Validation
+            if (totalTickets < 0) {
+                System.out.println("Invalid ticket amount (cannot be negative)! Please re-enter.\n");
+                continue;
             }
+
+            // Transaction Stop
+            if (totalTickets == 0) {
+                break;
+            }
+
+            // Discount
+            discount = 0.0;
+            if (totalTickets > 10) {
+                discount = 0.15;
+            } else if (totalTickets > 4) {
+                discount = 0.10;
+            }
+
+            // Counting Transaction
+            totalBeforeDiscount = totalTickets * ticketPrice;
+            totalPay = totalBeforeDiscount - (totalBeforeDiscount * discount);
+
+            // Total Acumulation
+            totalTicketsSold += totalTickets;
+            totalIncome += totalPay;
+
+            System.out.printf("Transaction successful! Total payment: Rp%.0f (Discount: %.0f%%)\n\n", totalPay, discount * 100);
+
+        } while (true);
+
+        System.out.println("\n=== DAILY RECAPITULATION REPORT ===");
+        System.out.println("Total Tickets Sold     : " + totalTicketsSold + " Tickets");
+        System.out.printf("Total Daily Income      : Rp.%.0f\n", totalIncome);
+
         }
     }
-}
+
