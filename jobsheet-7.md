@@ -258,6 +258,7 @@ The following is a list of tasks to be completed in this worksheet:
   -  If the ticket quantity entered is invalid (negative), the program ignores the input and asks for it to be re-entered.
   -  Loops may use for, while, or do-while. Add break or continue statements if necessary.
 - [x] **Task 2:** A parking lot operator wants to create a program to calculate the total parking fees of several vehicles. The parking rate is Rp 3,000 per hour for cars and Rp 2,000 per hour for motorcycles. The program keeps asking for input as long as the input is not 0. Implement the flowchart as a Java program!
+![Flowchart Task 2](/flowchart-jobsheet-7.png)
 
 
 ### 3.1 Implementation of Task 1 Code
