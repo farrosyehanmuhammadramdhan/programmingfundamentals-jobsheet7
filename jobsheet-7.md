@@ -69,8 +69,7 @@ The following shows the _output_ after the program is run:
     - Update/Increment (`i++`) : increment the value of i by 1 at the end of each iteration.
     - Loop Body : A code block within curly braces `{.}` that executes commands for inputting values ​​and determining the highest and lowest values.
 
-- **Question 2:** Why is the variable highest initialized to 0 and the variable lowest initialized to 100? What
-happens if highest is initialized to 100 and lowest is initialized to 0?
+- **Question 2:** Why is the variable highest initialized to 0 and the variable lowest initialized to 100? What happens if highest is initialized to 100 and lowest is initialized to 0?
   - **Answer:** 
     - **Explanation:** 
       - The variable `highest` is initialized to 0.0 so that the first input value—or any higher value—can immediately replace it. The variable `lowest` is initialized to 100.0 so that the first input value—or any lower value—can immediately replace it.
@@ -78,7 +77,7 @@ happens if highest is initialized to 100 and lowest is initialized to 0?
       - If all entered values ​​fall within the range of 0 to 100, no input will be greater than 100, so the `highest` value will remain 100.0. Similarly, since no input will be smaller than 0, the `lowest` value will remain 0.0.
 
 
-- **Question 3:**  Explain the function and workflow of the following code snippet!
+- **Question 3:** Explain the function and workflow of the following code snippet!
   ``` java
   if (score > highest) {
     highest = score;
@@ -132,13 +131,9 @@ happens if highest is initialized to 100 and lowest is initialized to 0?
         }
     }
     ```
-
-
-
-
 ---
 
-### 2.2 Experiment 2:  Student Grades Case Study in SIAKAD – WHILE Loop
+### 2.2 Experiment 2: Student Grades Case Study in SIAKAD – WHILE Loop
 
 A lecturer wants to enter the scores of several students into SIAKAD in order to determine their letter grades. The program must prompt the lecturer to enter the score of each student. If the lecturer enters an invalid score (negative or greater than 100), the program must ignore the input and ask the lecturer to re-enter it. Valid scores are then classified into letter grades:
 A (80 < score ≤ 100), B+ (73 < score ≤ 80), B (65 < score ≤ 73), C+ (60 < score ≤ 65), C (50 < score ≤ 60), D (39 < score ≤ 50), and E (score ≤ 39).
@@ -296,16 +291,12 @@ The following shows the _output_ after the program is run:
 - **Question 2:**  State the stopping condition used in this DO-WHILE loop!
   - **Answer:** The termination of the loop is controlled by checking `customerName.equalsIgnoreCase("cancel")` within the loop block, which triggers a `break` command.
     
-
-
 - **Question 3:** What is the function of using the value true in the DO-WHILE condition?
   - **Answer:** Creating a loop that runs continuously (an infinite loop) until a specific condition within the loop triggers a `break` command.
     
-
 - **Question 4:** Why does this DO-WHILE loop still run even though it has no initialization and update components?
   - **Answer:** This loop employs a sentinel-controlled loop scheme, where the termination of the loop depends on a specific input value ("cancel") and the `break` command, rather than on a numerical counter. Consequently, the initialization and update components for a counter are not required.
     
-
 
 ## 3: INDIVIDUAL ASSIGNMENT
 
