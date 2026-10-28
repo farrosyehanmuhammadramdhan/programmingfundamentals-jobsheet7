@@ -12,7 +12,7 @@
 
 The objectives of the practical session in this chapter are as follows:
 
-1. Students are able to explain the syntax for writing loop programs (for, while, and dowhile).
+1. Students are able to explain the syntax for writing loop programs (`for`, `while`, and `dowhile`).
 2. Students are able to implement loop flowcharts using the Java programming
 language
 ---
@@ -62,12 +62,20 @@ The following shows the _output_ after the program is run:
 
 #### 2.1.3 Answers to Questions
 
-- **Question 1:** Identify and indicate each component of the FOR loop in the program code of Experiment 1!
+- **Question 1:** Identify and indicate each component of the `FOR` loop in the program code of Experiment 1!
   - **Answer:** 
+    - Initialization (`int i = 1`) : Set up the counter variable `i` with an initial value of 1.
+    - Condition (`i <= 10`) : Determines the limit of the loop as long as the value of i is less than or equal to 10.
+    - Update/Increment (`i++`) : increment the value of i by 1 at the end of each iteration.
+    - Loop Body : A code block within curly braces `{.}` that executes commands for inputting values ​​and determining the highest and lowest values.
 
 - **Question 2:** Why is the variable highest initialized to 0 and the variable lowest initialized to 100? What
 happens if highest is initialized to 100 and lowest is initialized to 0?
   - **Answer:** 
+    - **Explanation:** 
+      - The variable `highest` is initialized to 0.0 so that the first input value—or any higher value—can immediately replace it. The variable `lowest` is initialized to 100.0 so that the first input value—or any lower value—can immediately replace it.
+      
+      - If all entered values ​​fall within the range of 0 to 100, no input will be greater than 100, so the `highest` value will remain 100.0. Similarly, since no input will be smaller than 0, the `lowest` value will remain 0.0.
 
 
 - **Question 3:**  Explain the function and workflow of the following code snippet!
@@ -80,11 +88,50 @@ happens if highest is initialized to 100 and lowest is initialized to 0?
   }
   ```
   - **Answer:** 
+    - **Function:** Compares the newly entered score value with the current highest and lowest values, then updates the highest or lowest variable if a new value is found that meets the criteria.
+  
+    - **Workflow:**
+      - The first if-block checks whether score > highest. If true, the value of highest is updated to the value of score.
+      - The second if-block checks whether score < lowest. If true, the value of lowest is updated to the value of score.
   
 
 - **Question 4:** Modify the program to count how many students pass and how many students fail, based on the passing threshold (minimum score of 60). Display the number of students who pass and fail after displaying the highest and lowest scores!
   - **Answer:**    
+    ``` java
+    import java.util.Scanner;
 
+    public class SiakadFor11 {
+        public static void main (String[] args) {
+            Scanner sc = new Scanner(System.in);
+            double score, highest = 0.0, lowest = 100.0;
+            int passedCount = 0, failedCount = 0;
+
+            for (int i = 1; i <= 10; i++) {
+                System.out.print("Enter score for student " + i + ": ");
+                score = sc.nextDouble();
+
+                if (score > highest) {
+                    highest = score;
+                }
+
+                if (score < lowest) {
+                    lowest = score;
+                }
+
+                if (score >= 60) {
+                    passedCount++;
+                } else {
+                    failedCount++;
+                }
+            }
+
+            System.out.println("Highest Score: " + highest);
+            System.out.println("Lowest Score: " + lowest);
+            System.out.println("Number of student passed: " + passedCount);
+            System.out.println("Number of student failed: " + failedCount);
+        }
+    }
+    ```
 
 
 
@@ -161,18 +208,31 @@ The following shows the _output_ after the program is run:
     a. score < 0 || score > 100
     b. continue
   - **Answer:**
+    - **Explanation:**
+      A. `score < 0 || score > 100` : a logical condition to check whether the `score` value is invalid—that is, if it is negative or greater than 100.
+
+      B. `continue` : An instruction to stop the remaining commands in the current iteration and jump immediately to the next loop iteration, without executing the commands that follow.
     
   
 - **Question 2:** Why is the i++ statement written at the end of the WHILE loop? What happens if it is written at the beginning of the WHILE loop?
   - **Answer:**
     - **Explanation:** 
+      - The value of `i` is incremented only when the entered data is valid. If the input is invalid, the `continue` statement is executed before `i++`, ensuring that the student sequence count does not decrease before a valid value is entered.
+      
+      - The value of `i` increments before the input and classification process for a given entry is complete. This results in incorrect student numbering (starting from 2 instead of 1), and invalid inputs are still counted as a full student iteration.
 
 - **Question 3:** If the number of students entered is 19, how many times will the WHILE loop run?
-  - **Answer:** 
+  - **Answer:** If all inputs are valid, the while loop will execute 19 times. However, if there are any invalid inputs, the loop will execute 19 times plus the total number of incorrect inputs.
     
 
 - **Question 4:** Modify the program so that, if a student receives grade A, the program displays an additional message “Well done, keep up the good work!”
   - **Answer:**
+  ``` java
+  if (score > 80 && score <= 100) {
+    System.out.println("The grade of student " + (i + 1) + " is A");
+    System.out.println("Well done, keep up the good work!");
+  }
+  ```
 
 
 
@@ -231,19 +291,19 @@ The following shows the _output_ after the program is run:
 
 - **Question 1:** In this DO-WHILE loop, if the first customer name entered is “cancel”, how many times is the loop executed?
   - **Answer:**
-    - **Explanation:** 
+    - **Explanation:** This loop program is executed exactly once. It runs the `do` block, reads the input "cancel", displays a cancellation message, and then exits the loop via the `break` command.
   
 - **Question 2:**  State the stopping condition used in this DO-WHILE loop!
-  - **Answer:**
+  - **Answer:** The termination of the loop is controlled by checking `customerName.equalsIgnoreCase("cancel")` within the loop block, which triggers a `break` command.
     
 
 
 - **Question 3:** What is the function of using the value true in the DO-WHILE condition?
-  - **Answer:** 
+  - **Answer:** Creating a loop that runs continuously (an infinite loop) until a specific condition within the loop triggers a `break` command.
     
 
 - **Question 4:** Why does this DO-WHILE loop still run even though it has no initialization and update components?
-  - **Answer:**
+  - **Answer:** This loop employs a sentinel-controlled loop scheme, where the termination of the loop depends on a specific input value ("cancel") and the `break` command, rather than on a numerical counter. Consequently, the initialization and update components for a counter are not required.
     
 
 
